@@ -1,3 +1,3 @@
 FROM nginx:alpine
 LABEL projec="bootcamp-web"
-COPY ./web/* /usr/share/nginx/html
+COPY ./web/* /usr/share/nginx/html/
