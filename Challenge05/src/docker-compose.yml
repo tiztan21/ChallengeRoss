@@ -1,8 +1,8 @@
 version: '3'
 services:
-  web:
-    image: tiztan21/flaskweb:1.0
-    container_name: Service-flash-app
+  app:
+    image: tiztan21/flaskweb:1.6
+    container_name: service-flask-app
     ports:
       - 8000:8000
     networks:
@@ -11,6 +11,9 @@ services:
   consumer:
     image: tiztan21/consumer:1.0
     container_name: consumer
+    environment:
+      - LOCAL=true
+      - PYTHONUNBUFFERED="1"
     networks:
       - net_py
 networks:
