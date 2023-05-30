@@ -8,4 +8,5 @@ COPY pokeapi.db /app
 COPY templates/ /app/templates
 RUN pip3 uninstall urllib3 -y
 RUN pip3 install --no-cache-dir -U urllib3
+EXPOSE 5000
 CMD ["python3", "app.py"]
