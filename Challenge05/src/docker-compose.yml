@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+        image: tiztan21/flaskweb:1.0
+        container_name: Service-flash-app
+        ports:
+          - 8000:8000
+        networks:
+          - net_py
+
+  consumer:
+        image: tiztan21/consumer:1.0
+        container_name: consumer
+        networks:
+          - net_py
+networks:
+  net_py:
+    driver: bridge
