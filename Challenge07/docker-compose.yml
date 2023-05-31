@@ -1,0 +1,22 @@
+version: '3'
+services:
+  front:
+    image: tiztan21/frontend-pokemon:1.0.3
+    container_name: frontend-pokemon
+    networks:
+      - net_pk
+    ports:
+      - 3000:3000
+    depends_on:
+      - back
+    
+  back:
+    image: tiztan21/backend-pokemon:1.0.0
+    container_name: backend-pokemon
+    networks:
+      - net_pk
+    ports:
+      - 8000:8000
+networks:
+  net_pk:
+    driver: bridge
